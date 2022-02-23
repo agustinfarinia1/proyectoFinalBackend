@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 @Log4j2
 @RequiredArgsConstructor
-public class ProductoService implements ServiceInterface<Producto> {
+public class ProductoService implements ProductoServiceInterfaz<Producto> {
 
     private final ProductoRepository repository;
 
