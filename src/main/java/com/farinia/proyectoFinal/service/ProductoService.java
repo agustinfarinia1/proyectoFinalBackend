@@ -2,17 +2,17 @@ package com.farinia.proyectoFinal.service;
 
 import com.farinia.proyectoFinal.models.Producto;
 import com.farinia.proyectoFinal.repository.ProductoRepository;
+import com.farinia.proyectoFinal.service.Interfaces.ProductoServiceInterfaz;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Log4j2
 @RequiredArgsConstructor
-public class ProductoService implements ProductoServiceInterfaz<Producto> {
+public class ProductoService implements ProductoServiceInterfaz {
 
     private final ProductoRepository repository;
 
@@ -24,12 +24,12 @@ public class ProductoService implements ProductoServiceInterfaz<Producto> {
 
     @Override
     public Producto findByid(String id) {
-        Optional<Producto> res = repository.findById(id);
-        if(res.isPresent()){
-            log.info("Service-Producto existente");
-            return res.get();
-        }
-        return null;
+        return repository.findById(id).get();
+    }
+
+    @Override
+    public List<Producto> findByCategoria(String categoria) {
+        return repository.findByCategoria(categoria);
     }
 
     @Override

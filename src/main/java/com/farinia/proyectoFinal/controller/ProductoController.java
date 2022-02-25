@@ -26,9 +26,15 @@ public class ProductoController {
     }
 
     @GetMapping("/producto/{id}")
-    public Producto getProductos(@PathVariable String id){
+    public Producto getProductosbyId(@PathVariable String id){
         log.info("Controller-GetProductoById");
         return service.findByid(id);
+    }
+
+    @GetMapping("/producto/categoria/{categoria}")
+    public List<Producto> getProductosbyCategoria(@PathVariable String categoria){
+        log.info("Controller-GetProductoByCategoria");
+        return service.findByCategoria(categoria);
     }
 
     @PostMapping("/producto")

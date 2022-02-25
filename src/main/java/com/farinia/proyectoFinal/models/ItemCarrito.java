@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Item {
+public class ItemCarrito {
     private String id;
     private int cantidad;
 
@@ -18,10 +18,10 @@ public class Item {
         if (o == this) {
             return true;
         }
-        if (!(o instanceof Item)) {
+        if (!(o instanceof ItemCarrito)) {
             return false;
         }
-        Item c = (Item) o;
+        ItemCarrito c = (ItemCarrito) o;
         return c.getId().equals(this.getId());
     }
 }

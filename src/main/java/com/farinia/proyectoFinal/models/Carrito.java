@@ -16,7 +16,7 @@ import java.util.List;
 public class Carrito {
     private String id;
     private String email;
-    private List<Item> lista;
+    private List<ItemCarrito> lista;
     private String fecha_creacion;
     private String direccion;
 }

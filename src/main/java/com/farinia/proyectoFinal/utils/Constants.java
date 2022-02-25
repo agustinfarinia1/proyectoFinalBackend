@@ -2,9 +2,7 @@ package com.farinia.proyectoFinal.utils;
 
 public class Constants {
 
-    //Redis
-    public static final String NAME_MAP_MESSAGE = "mensaje-map";
-    //Security
+    public static final String KEY_REDIS = "user_redis";
     public static final String ROLE = "ROLE_USER";
     public static final String AUTHORITIES = "authorities";
     public static final String HEADER_TOKEN = "Authorization";
